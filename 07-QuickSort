@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+
+public class QuickSort{
+
+    public Integer[] qsort(Integer[] a){
+	if (a.length <= 1){
+	    return a;
+	}
+	else{
+	    ArrayList<Integer> upper = new ArrayList<Integer>();
+	    ArrayList<Integer> lower = new ArrayList<Integer>();
+	    p = (int)(Math.random()*(high - low + 1) + low);
+	    for(int i = 0; i < a.length; i++){
+		if(a[i] < a[p]){
+		    lower.add(a[i]);
+		}
+		else if(a[i] > a[p]){
+		    upper.add(a[i]);
+		}
+	    }
+	    lowera = lower.toArray(new Integer(){});
+	    uppera = upper.toArray(new Integer(){});
+	    R1 = qsort(lowera);
+	    R2 = qsort(uppera);
+	    a[p] = pivitval;
+	    for(int x = 0; x < a.length; x++){
+		if(x < R1.length){
+		    a[x] = R1[x];
+		}
+		else if(x == R1.length){
+		    a[x] = pivotval;
+		}
+		else{
+		    a[x] = R2[x-R1.length);
+		}
+	    }
+	}
+    }
+}

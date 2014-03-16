@@ -1,0 +1,69 @@
+public class QuickSort2{
+
+
+
+    public int[] partition(int[] a, int L, int R){
+
+	int rand = (int) (Math.random() * (R - L));
+
+	pivotval = a[rand];
+
+	temp = a[R];
+
+	a[R] = pivotval;
+
+	a[rand] = temp;
+
+	int wall = L;
+
+	for (int i = L; i < (R - L - 1); i++){
+
+	    if (a[i] < pivotval){
+
+		int temp = a[wall];
+
+		a[wall] = a[i];
+
+		a[i] = temp;
+
+		wall++;
+
+	    }
+
+	}
+
+	temp = a[wall];
+
+	a[wall] = a[R];
+
+	a[R] = [temp];
+
+	return wall;
+
+    }
+
+
+
+    public void qsort2(int[] a, int L, int R){
+
+	if (L>=R){
+
+	    return;
+
+	}
+
+	else {
+
+	    int p = partition(a,L,R);
+
+	    quickSort2(a,p+1,R);
+
+	    quickSort2(a,L,p-1);
+
+	}
+
+
+
+    }
+
+}
